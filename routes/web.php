@@ -46,3 +46,7 @@ $router->post('/reviews', 'ReviewsController@create');
 $router->put('/reviews/{id}', 'ReviewsController@update');
 
 $router->delete('/reviews/{id}', 'ReviewsController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
