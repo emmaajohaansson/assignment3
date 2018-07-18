@@ -26,15 +26,15 @@ $router->put('/tvshows/{id}', 'TvShowsController@update');
 $router->delete('/tvshows/{id}', 'TvShowsController@destroy');
 
 
-$router->get('/showstreamer', 'StreamingServicesController@index');
+$router->get('/streamingservice', 'StreamingServicesController@index');
 
-$router->get('/showstreamer/{id}', 'StreamingServicesController@show');
+$router->get('/streamingservice/{id}', 'StreamingServicesController@show');
 
-$router->post('/showstreamer', 'StreamingServicesController@create');
+$router->post('/streamingservice', 'StreamingServicesController@create');
 
-$router->put('/showstreamer/{id}', 'StreamingServicesController@update');
+$router->put('/streamingservice/{id}', 'StreamingServicesController@update');
 
-$router->delete('/showstreamer/{id}', 'StreamingServicesController@destroy');
+$router->delete('/streamingservice/{id}', 'StreamingServicesController@destroy');
 
 
 $router->get('/reviews', 'ReviewsController@index');
