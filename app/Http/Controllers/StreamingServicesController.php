@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\StreamingService;
 
 class StreamingServicesController extends Controller
 {
@@ -13,7 +14,20 @@ class StreamingServicesController extends Controller
      */
     public function index()
     {
-        //
+      $streamingServices = StreamingService::all();
+      return $streamingServices;
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+      $streamingService = StreamingService::find($id);
+      return $streamingService;
     }
 
     /**
@@ -26,27 +40,6 @@ class StreamingServicesController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
