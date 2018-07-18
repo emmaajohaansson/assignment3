@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReviewsTable extends Migration
+class CreateStreamingServiceTvShowTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('streaming_service_tv_show', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('name', 100);
-          $table->string('comment');
-          $table->integer('grade');
-          //$table->integer('show_id');
           $table->integer('tv_show_id');
-          //$table->foreign('show_id')->references('id')->on('tv_shows');
+          $table->integer('streaming_service_id');
           $table->timestamp('created_at')->useCurrent();
           $table->timestamp('updated_at')->useCurrent();
         });
@@ -33,6 +29,6 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('streaming_service_tv_show');
     }
 }

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\TvShow;
+//use App\Review;
+//use App\StreamingService;
 
 class TvShowsController extends Controller
 {
@@ -13,7 +16,22 @@ class TvShowsController extends Controller
      */
     public function index()
     {
-        //
+      $tvShows = TvShow::all();
+      return $tvShows;
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+      $tvShow = TvShow::find($id);
+      $tvShow->streamingServices = $tvShow->streamingServices;
+      $tvShow->reviews = $tvShow->reviews;
+      return $tvShow;
     }
 
     /**
@@ -26,27 +44,6 @@ class TvShowsController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

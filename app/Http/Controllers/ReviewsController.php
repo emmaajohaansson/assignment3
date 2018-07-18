@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Review;
 
 class ReviewsController extends Controller
 {
@@ -13,28 +14,8 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+      $reviews = Review::all();
+      return $reviews;
     }
 
     /**
@@ -44,6 +25,17 @@ class ReviewsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+      $review = Review::find($id);
+      return $review;
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         //
     }

@@ -11,9 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-      $this->call('Show_streamerTableSeeder');
+      $this->call('Tv_showsTableSeeder');
       $this->call('ReviewsTableSeeder');
       $this->call('Streaming_servicesTableSeeder');
-      $this->call('Tv_showsTableSeeder');
+      $this->call('Streaming_service_tv_showTableSeeder');
     }
 }

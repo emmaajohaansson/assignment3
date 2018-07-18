@@ -14,7 +14,7 @@ class TvShow extends Model
     }
 
     //Defining a tv-shows relationship with a streaming service
-    public function stores(){
+    public function streamingServices(){
       return $this->belongsToMany('App\StreamingService');
     }
 }
