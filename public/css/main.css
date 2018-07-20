@@ -69,6 +69,23 @@ html, body {
   height: 300px;
 }
 
+.details-img {
+  float: left;
+}
+
+.detail-info {
+  float: right;
+  margin-top: 40px;
+}
+
+.show-details {
+  font-size: 20px;
+}
+
+.detailParagraphs {
+  margin: 20px;
+}
+
 .links > a {
     padding: 0 25px;
     font-size: 12px;

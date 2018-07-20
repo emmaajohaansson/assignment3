@@ -10,7 +10,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ $tvShow->title }}</h5>
             <p class="card-text">{{ $tvShow->description }}</p>
-            <a href="#" class="btn btn-primary">Read more</a>
+            <a href="/tvshows/{{ $tvShow->id }}" class="btn btn-primary">Read more</a>
         </div>
       </div>
         @endforeach
