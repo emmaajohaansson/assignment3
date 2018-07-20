@@ -17,7 +17,9 @@ class TvShowsController extends Controller
     public function index()
     {
       $tvShows = TvShow::all();
-      return $tvShows;
+      return view("tv_shows", [
+        "tvShows" => $tvShows
+    ]);
     }
 
     /**

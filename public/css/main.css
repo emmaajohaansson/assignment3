@@ -61,8 +61,15 @@ html, body {
     padding-top: 70px;
 }
 
+.card {
+  margin: 20px;
+}
+
+.card-img-top {
+  height: 300px;
+}
+
 .links > a {
-    color: #636b6f;
     padding: 0 25px;
     font-size: 12px;
     font-weight: 600;
@@ -73,6 +80,10 @@ html, body {
 
 a {
   color: white; !important
+}
+
+a:hover {
+  color: white;
 }
 
 .m-b-md {

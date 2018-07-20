@@ -39,13 +39,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                          <a class="nav-link">{{ __('Tv-shows') }}</a>
+                          <a class="nav-link" href="{{ route('tvshows') }}">{{ __('Tv-shows') }}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link">{{ __('Streaming services') }}</a>
+                          <a class="nav-link" href="{{ route('streamingservices') }}">{{ __('Streaming services') }}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link">{{ __('Reviews') }}</a>
+                          <a class="nav-link" href="{{ route('reviews') }}">{{ __('Reviews') }}</a>
                       </li>
                     </ul>
 
