@@ -2,8 +2,8 @@
 
 @section('content')
 
-      <div class="flex-center position-ref full-height">
-          <p>Content</p>
+      <div class="img-background full-height subtract-header">
+        <h1 class="title">What are you watching today?</h1>
         </div>
 
 @endsection
