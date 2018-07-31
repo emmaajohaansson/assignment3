@@ -72,10 +72,15 @@ h2 {
 
 .card {
   margin: 20px;
+  background-color: inherit;
 }
 
 .card-img-top {
   height: 300px;
+}
+
+.card-title {
+  color: white;
 }
 
 .detail-cards {
@@ -97,6 +102,48 @@ h2 {
 
 .detailParagraphs {
   margin: 20px;
+}
+
+.reviews {
+  margin-top: 70px;
+}
+
+.glyphicon-star {
+  color: yellow;
+}
+
+.glyphicon-asterisk {
+  color: red;
+}
+
+.fa-star {
+  color: yellow;
+}
+
+.review-form {
+  margin-right: 20px;
+}
+
+.review-list {
+  margin-left: 20px;
+}
+
+.review-list > li {
+  color: white;
+  background-color: black;
+  text-align: left;
+}
+
+.list-group-item {
+  border: 1px solid grey;!important
+}
+
+.revUsername {
+
+}
+
+.reviewComment {
+
 }
 
 .links > a {

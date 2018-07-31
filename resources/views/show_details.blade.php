@@ -15,12 +15,12 @@
           </div>
         @endif
       </div>
-      <div class="row justify-content-center">
+      <div class="row justify-content-center reviews">
         <h2 class="col-md-4 col-md-offset-4-">Reviews</h2>
         <p class="text-center col-md-12">Read what others has to say about this show, or add your own review!</p>
     <form class="col-md-6 col-md-offset-3">
         @csrf
-  <div class="form-group">
+  <div class="form-group review-form">
     <label for="rating">Rating</label>
     <select id="rating" name="rating" class="form-control form-control-lg">
       <option>1</option>
@@ -29,16 +29,24 @@
       <option>4</option>
       <option>5</option>
     </select>
-  </div>
-  <div class="form-group">
+
+<span class="glyphicon glyphicon-asterisk"></span>
     <label for="reviewComment">Comment</label>
     <textarea rows="6" id="reviewComment" type="text" class="form-control" name="comment" required></textarea>
   </div>
   <input type="submit" value="Submit Review" class="btn btn-primary btn-sm mb-2">
 </form>
-        <ul class="review-list list-group col-md-6 col-md-offset-3">
+        <ul class="review-list list-group col-md-5">
           @foreach ($tvShow->reviews as $reviews => $review)
-          <li class="list-group-item">{{ $review->name }} {{ $review->comment }} {{ $review->grade }}</li>
+          <li class="list-group-item">
+            <h4 class="revUsername">{{ $review->name }}</h4>
+            <span class="fa-layers fa-fw">
+            @for ($x = 1; $x <= $review->grade; $x++)
+            <i class="fa fa-star"></i>
+            @endfor
+          </span>
+            <p class="reviewComment">{{ $review->comment }}</p>
+        </li>
           @endforeach
         </ul>
       </div>
