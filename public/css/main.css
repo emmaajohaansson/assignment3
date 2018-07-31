@@ -129,6 +129,15 @@ h2 {
   margin-bottom: 0;
 }
 
+.streaming-img {
+  height: 150px;
+  width: 300px;
+}
+
+.streaming-info {
+  float: right;
+}
+
 .review-form {
   margin-right: 20px;
 }
