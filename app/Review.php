@@ -6,7 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-  public function tvShows(){
-    return $this->belongsTo('App\TvShow');
-  }
+  //
 }
