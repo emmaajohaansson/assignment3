@@ -12,10 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-$router->get('/tvshows', 'TvShowsController@index');
+$router->get('/tvshows', 'TvShowsController@index')->name('tvshows');
 
 $router->get('/tvshows/{id}', 'TvShowsController@show');
 
@@ -26,7 +26,7 @@ $router->put('/tvshows/{id}', 'TvShowsController@update');
 $router->delete('/tvshows/{id}', 'TvShowsController@destroy');
 
 
-$router->get('/streamingservice', 'StreamingServicesController@index');
+$router->get('/streamingservice', 'StreamingServicesController@index')->name('streamingservices');
 
 $router->get('/streamingservice/{id}', 'StreamingServicesController@show');
 
@@ -37,7 +37,7 @@ $router->put('/streamingservice/{id}', 'StreamingServicesController@update');
 $router->delete('/streamingservice/{id}', 'StreamingServicesController@destroy');
 
 
-$router->get('/reviews', 'ReviewsController@index');
+$router->get('/reviews', 'ReviewsController@index')->name('reviews');
 
 $router->get('/reviews/{id}', 'ReviewsController@show');
 

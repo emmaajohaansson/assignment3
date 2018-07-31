@@ -18,9 +18,7 @@ class CreateReviewsTable extends Migration
           $table->string('name', 100);
           $table->string('comment');
           $table->integer('grade');
-          //$table->integer('show_id');
           $table->integer('tv_show_id');
-          //$table->foreign('show_id')->references('id')->on('tv_shows');
           $table->timestamp('created_at')->useCurrent();
           $table->timestamp('updated_at')->useCurrent();
         });
