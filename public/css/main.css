@@ -54,11 +54,16 @@ html, body {
     text-align: center;
 }
 
-.title {
+.frontTitle {
     font-size: 84px;
     color: white;
     font-family: 'Nunito', sans-serif;
     padding-top: 70px;
+}
+
+.title {
+  margin-top: 30px;
+  font-size: 50px;
 }
 
 .show-title {
@@ -120,12 +125,20 @@ h2 {
   color: yellow;
 }
 
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
 .review-form {
   margin-right: 20px;
 }
 
 .review-list {
   margin-left: 20px;
+}
+
+.all-reviews {
+  margin-bottom: 30px;
 }
 
 .review-list > li {
