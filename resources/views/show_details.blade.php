@@ -22,7 +22,7 @@
         @csrf
   <div class="form-group review-form">
     <label for="rating">Rating</label>
-    <select id="rating" name="rating" class="form-control form-control-lg">
+    <select id="rating" name="rating" class="reviewFields form-control form-control-lg">
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -30,9 +30,8 @@
       <option>5</option>
     </select>
 
-<span class="glyphicon glyphicon-asterisk"></span>
     <label for="reviewComment">Comment</label>
-    <textarea rows="6" id="reviewComment" type="text" class="form-control" name="comment" required></textarea>
+    <textarea rows="6" type="text" class="form-control reviewFields" name="comment" required></textarea>
   </div>
   <input type="submit" value="Submit Review" class="btn btn-primary btn-sm mb-2">
 </form>

@@ -45,7 +45,26 @@ class TvShowsController extends Controller
      */
     public function create()
     {
-        //
+      $tvShow = new TvShow;
+      $tvShow->title = $request->title;
+      $tvShow->image = $request->image;
+      $tvShow->description = $request->description;
+      $tvShow->premiere_year = $request->premiere_year;
+      //Save the new tv-show
+      $tvShow->save();
+
+      //Use the ProductStore-model to connect
+      //the products to the stores it is in
+      foreach ($request->get("streamingServices") as $service) {
+        $showStreamer = new StreamingServiceTvShow;
+        $showStreamer->tv_show_id = $tv_show->id;
+        $showStreamer->streaming_service_id = $service;
+        $showStreamer->save();
+       }
+
+       //Return 'success' response
+       $response = ['success' => true];
+       return $response;
     }
 
 
