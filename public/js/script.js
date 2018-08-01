@@ -1,5 +1,6 @@
-//$(document).ready(function() {
-//alert("Produkten har sparats!");
+$(document).ready(function() {
+alert("Produkten har sparats!");
+});
 
 //window.onload = function() {
   //alert("hej");
@@ -7,7 +8,7 @@
 
 $("#submit-show-button").on("submit", function(e) {
     e.preventDefault();
-
+    console.log("i ajax-funktionen");
     var form = $(this);
     $.ajax({
         url: "/tvshows",
