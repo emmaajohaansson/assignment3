@@ -42,6 +42,23 @@ class StreamingServicesController extends Controller
         //
     }
 
+    /**
+    * Store a newly created resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+    public function store(Request $request)
+    {
+      $streamingService = new StreamingService;
+      $streamingService->name = $request->name;
+      $streamingService->price = $request->price;
+      $streamingService->image = $request->image;
+      //Save the new streaming service
+      $streamingService->save();
+
+       return redirect()->route('streamingservices.index');
+    }
 
     /**
      * Show the form for editing the specified resource.

@@ -1,7 +1,7 @@
-<button type="button" class="btn btn-lg create-button" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i> Add new show</button>
+<button type="button" class="btn btn-lg create-button" data-toggle="modal" data-target="#streamingModal"><i class="fa fa-plus"></i> Add new streaming service</button>
 
 <!-- Modal -->
-<div id="createModal" class="modal fade" role="dialog">
+<div id="streamingModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -11,7 +11,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <form action="{{ route('tvshows.store') }}" method="post">
+        <form action="{{ route('streamingservices.store') }}" method="post">
             @csrf
       <div class="form-group">
         <label for="title">Name</label>

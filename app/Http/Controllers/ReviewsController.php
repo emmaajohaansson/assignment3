@@ -45,6 +45,11 @@ class ReviewsController extends Controller
         //
     }
 
+    public function store(Request $request)
+    {
+
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
