@@ -17,7 +17,7 @@ class ReviewsController extends Controller
     {
       $reviews = Review::all();
       $tvShows = TvShow::all();
-      return view("reviews", [
+      return view("reviews.index", [
         "reviews" => $reviews,
         "tvShows" => $tvShows
       ]);

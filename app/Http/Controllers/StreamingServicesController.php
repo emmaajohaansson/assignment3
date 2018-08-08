@@ -15,7 +15,7 @@ class StreamingServicesController extends Controller
     public function index()
     {
       $streamingServices = StreamingService::all();
-      return view("streaming_services", [
+      return view("streamingservices.index", [
         "streamingServices" => $streamingServices
     ]);
     }

@@ -7,21 +7,19 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Add new show</h4>
+        <h4 class="modal-title">Add new streaming service</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
         <form action="{{ route('tvshows.store') }}" method="post">
             @csrf
       <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" name="title" class="col-md-10" required />
+        <label for="title">Name</label>
+        <input type="text" name="name" class="col-md-10" required />
+        <label for="title">Price</label>
+        <input type="number" name="price" class="col-md-10" required />
         <label for="title">Image</label>
         <input type="text" name="image" class="col-md-10" required />
-        <label for="title">Description</label>
-        <textarea rows="6" name="description" class="col-md-10 form-control" type="text" name="comment" required></textarea>
-        <label for="title">Premiere Year</label>
-        <input type="number" name="premiere_year" class="col-md-10" required />
       </div>
       </div>
       <div class="modal-footer">
