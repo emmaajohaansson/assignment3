@@ -13,7 +13,7 @@
         <div class="col-md-5 streaming-info">
         <h4 class="revUsername">{{ $service->name }}</h4>
         <p>Price: {{ $service->price }} SEK</p>
-      </div>
+      </div>l
     </li>
       @endforeach
     </ul>
