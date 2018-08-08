@@ -13,16 +13,16 @@
             <p class="detailParagraphs">{{ $tvShow->description }}</p>
             <p class="detailParagraphs"><b>Premiere:</b> {{ $tvShow->premiere_year }}</p>
           </div>
-        @endif
       </div>
       <div class="row justify-content-center reviews">
         <h2 class="col-md-4 col-md-offset-4-">Reviews</h2>
         <p class="text-center col-md-12">Read what others has to say about this show, or add your own review!</p>
-    <form class="col-md-6 col-md-offset-3">
+    <form action="{{ route('reviews.store') }}" method="post" class="col-md-6 col-md-offset-3">
         @csrf
   <div class="form-group review-form">
+    <input type="text" value="Emma" name="name"/>
     <label for="rating">Rating</label>
-    <select id="rating" name="rating" class="reviewFields form-control form-control-lg">
+    <select id="rating" name="grade" class="reviewFields form-control form-control-lg">
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -32,6 +32,9 @@
 
     <label for="reviewComment">Comment</label>
     <textarea rows="6" type="text" class="form-control reviewFields" name="comment" required></textarea>
+    <input type="text" id="reviewConnect" value="{{ $tvShow->id }}" name="tv_show_id" readonly />
+    @endif
+
   </div>
   <input type="submit" value="Submit Review" class="btn btn-primary btn-sm mb-2">
 </form>

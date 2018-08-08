@@ -45,9 +45,24 @@ class ReviewsController extends Controller
         //
     }
 
+    /**
+    * Store a newly created resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
     public function store(Request $request)
     {
+      $review = new Review;
+      $review->name = $request->name;
+      $review->comment = $request->comment;
+      $review->grade = $request->grade;
+      $review->tv_show_id = $request->tv_show_id;
+      //Save the new tv-show
+      $review->save();
 
+
+       return redirect()->route('tvshows.index');
     }
 
     /**
