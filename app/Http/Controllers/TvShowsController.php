@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TvShow;
-//use App\Review;
-//use App\StreamingService;
 
 class TvShowsController extends Controller
 {
@@ -45,6 +43,17 @@ class TvShowsController extends Controller
      */
     public function create()
     {
+      //
+    }
+
+    /**
+    * Store a newly created resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+    public function store(Request $request)
+    {
       $tvShow = new TvShow;
       $tvShow->title = $request->title;
       $tvShow->image = $request->image;
@@ -55,16 +64,18 @@ class TvShowsController extends Controller
 
       //Use the ProductStore-model to connect
       //the products to the stores it is in
-      foreach ($request->get("streamingServices") as $service) {
-        $showStreamer = new StreamingServiceTvShow;
-        $showStreamer->tv_show_id = $tv_show->id;
-        $showStreamer->streaming_service_id = $service;
-        $showStreamer->save();
-       }
+      //foreach ($request->get("streamingServices") as $service) {
+        //$showStreamer = new StreamingServiceTvShow;
+        //$showStreamer->tv_show_id = $tv_show->id;
+        //$showStreamer->streaming_service_id = $service;
+        //$showStreamer->save();
+       //}
 
        //Return 'success' response
-       $response = ['success' => true];
-       return $response;
+       //$response = ['success' => true];
+       //return $response;
+
+       return redirect()->route('tvshows.index');
     }
 
 
