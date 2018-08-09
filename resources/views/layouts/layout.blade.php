@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -40,13 +41,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ route('tvshows') }}">{{ __('Tv-shows') }}</a>
+                          <a class="nav-link" href="{{ route('tvshows.index') }}">{{ __('Tv-shows') }}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ route('streamingservices') }}">{{ __('Streaming services') }}</a>
+                          <a class="nav-link" href="{{ route('streamingservices.index') }}">{{ __('Streaming services') }}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ route('reviews') }}">{{ __('Reviews') }}</a>
+                          <a class="nav-link" href="{{ route('reviews.index') }}">{{ __('Reviews') }}</a>
                       </li>
                     </ul>
 
@@ -83,10 +84,12 @@
                 </div>
             </div>
         </nav>
-
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <div class="container-fluid">
             @yield("content")
         </div>
     </div>
+    <!--<script src="{{ asset('js/script.js') }}" defer></script>-->
 </body>
 </html>

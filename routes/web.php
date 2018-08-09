@@ -15,37 +15,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-$router->get('/tvshows', 'TvShowsController@index')->name('tvshows');
+Route::resource('tvshows', 'TvShowsController');
 
-$router->get('/tvshows/{id}', 'TvShowsController@show');
+Route::resource('streamingservices', 'StreamingServicesController');
 
-$router->post('/tvshows', 'TvShowsController@create');
-
-$router->put('/tvshows/{id}', 'TvShowsController@update');
-
-$router->delete('/tvshows/{id}', 'TvShowsController@destroy');
+Route::resource('reviews', 'ReviewsController');
 
 
-$router->get('/streamingservice', 'StreamingServicesController@index')->name('streamingservices');
-
-$router->get('/streamingservice/{id}', 'StreamingServicesController@show');
-
-$router->post('/streamingservice', 'StreamingServicesController@create');
-
-$router->put('/streamingservice/{id}', 'StreamingServicesController@update');
-
-$router->delete('/streamingservice/{id}', 'StreamingServicesController@destroy');
-
-
-$router->get('/reviews', 'ReviewsController@index')->name('reviews');
-
-$router->get('/reviews/{id}', 'ReviewsController@show');
-
-$router->post('/reviews', 'ReviewsController@create');
-
-$router->put('/reviews/{id}', 'ReviewsController@update');
-
-$router->delete('/reviews/{id}', 'ReviewsController@destroy');
 
 Auth::routes();
 

@@ -17,7 +17,7 @@ class ReviewsController extends Controller
     {
       $reviews = Review::all();
       $tvShows = TvShow::all();
-      return view("reviews", [
+      return view("reviews.index", [
         "reviews" => $reviews,
         "tvShows" => $tvShows
       ]);
@@ -43,6 +43,26 @@ class ReviewsController extends Controller
     public function create()
     {
         //
+    }
+
+    /**
+    * Store a newly created resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+    public function store(Request $request)
+    {
+      $review = new Review;
+      $review->name = $request->name;
+      $review->comment = $request->comment;
+      $review->grade = $request->grade;
+      $review->tv_show_id = $request->tv_show_id;
+      //Save the new tv-show
+      $review->save();
+
+
+       return redirect()->route('tvshows.show', ['id' => $review->tv_show_id]);
     }
 
     /**
