@@ -10,9 +10,9 @@
         <h4 class="modal-title">Add new streaming service</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-      <div class="modal-body">
         <form action="{{ route('streamingservices.store') }}" method="post">
             @csrf
+    <div class="modal-body">
       <div class="form-group">
         <label for="title">Name</label>
         <input type="text" name="name" class="col-md-10" required />

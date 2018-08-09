@@ -62,7 +62,7 @@ class ReviewsController extends Controller
       $review->save();
 
 
-       return redirect()->route('tvshows.index');
+       return redirect()->route('tvshows.show', ['id' => $review->tv_show_id]);
     }
 
     /**

@@ -10,9 +10,9 @@
         <h4 class="modal-title">Add new show</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-      <div class="modal-body">
         <form action="{{ route('tvshows.store') }}" method="post">
             @csrf
+      <div class="modal-body">
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" name="title" class="col-md-10" required />
