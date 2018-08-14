@@ -20,6 +20,8 @@
       @endfor
     </span>
       <p class="reviewComment">{{ $review->comment }}</p>
+      <a class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+      <a class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</a>
     </div>
   </div>
 @endif

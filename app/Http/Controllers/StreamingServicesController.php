@@ -29,7 +29,9 @@ class StreamingServicesController extends Controller
     public function show($id)
     {
       $streamingService = StreamingService::find($id);
-      return $streamingService;
+      return view("streamingservices.show", [
+        "streamingService" => $streamingService
+    ]);
     }
 
     /**

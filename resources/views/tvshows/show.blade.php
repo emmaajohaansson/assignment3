@@ -9,6 +9,10 @@
             <h1 class="show-title col-md-12">
               {{ $tvShow->title }}
             </h1>
+            <div class="col-md-12 showButtons">
+            <a class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+            <a class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</a>
+          </div>
             <div class="detail-info col-md-6 col-md-offset-3">
             <p class="detailParagraphs">{{ $tvShow->description }}</p>
             <p class="detailParagraphs"><b>Premiere:</b> {{ $tvShow->premiere_year }}</p>
@@ -33,29 +37,28 @@
         </div>
         @endguest
         @auth
-    <form action="{{ route('reviews.store') }}" method="post" class="col-md-6 col-md-offset-3">
-        @csrf
-  <div class="form-group review-form">
-    @if (Auth::user())
-    <input type="text" id="review-user" value="{{ Auth::user()->name }}" name="name"/>
-    @endif
-    <label for="rating">Rating</label>
-    <select id="rating" name="grade" class="reviewFields form-control form-control-lg">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+        <form action="{{ route('reviews.store') }}" method="post" class="col-md-6 col-md-offset-3">
+            @csrf
+        <div class="form-group review-form">
+        @if (Auth::user())
+        <input type="text" id="review-user" value="{{ Auth::user()->name }}" name="name"/>
+        @endif
+        <label for="rating">Rating</label>
+        <select id="rating" name="grade" class="reviewFields form-control form-control-lg">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
 
-    <label for="reviewComment">Comment</label>
-    <textarea rows="6" type="text" class="form-control reviewFields" name="comment" required></textarea>
-    <input type="text" id="reviewConnect" value="{{ $tvShow->id }}" name="tv_show_id" readonly />
-
-  </div>
-  <input type="submit" value="Submit Review" class="btn btn-primary btn-sm mb-2">
-</form>
-@endauth
+        <label for="reviewComment">Comment</label>
+        <textarea rows="6" type="text" class="form-control reviewFields" name="comment" required></textarea>
+        <input type="text" id="reviewConnect" value="{{ $tvShow->id }}" name="tv_show_id" readonly />
+        </div>
+        <input type="submit" value="Submit Review" class="btn btn-primary btn-sm mb-2">
+        </form>
+        @endauth
         <ul class="review-list list-group col-md-5">
           @forelse ($tvShow->reviews as $reviews => $review)
           <li class="list-group-item">

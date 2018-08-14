@@ -44,9 +44,12 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+      $tvShow = TvShow::find($id);
+      return view("reviews.create", [
+        "tvShow" => $tvShow
+      ]);
     }
 
     /**

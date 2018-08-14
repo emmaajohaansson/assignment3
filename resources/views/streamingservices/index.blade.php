@@ -17,6 +17,7 @@
         <div class="col-md-5 streaming-info">
         <h4 class="revUsername">{{ $service->name }}</h4>
         <p>Price: {{ $service->price }} SEK</p>
+        <a class="btn btn-primary viewMore col-md-4" href="{{ route('streamingservices.show', ['id' => $service->id]) }}">View More</a>
       </div>
     </li>
       @endforeach
