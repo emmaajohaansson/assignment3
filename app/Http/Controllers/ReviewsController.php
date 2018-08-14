@@ -32,7 +32,11 @@ class ReviewsController extends Controller
     public function show($id)
     {
       $review = Review::find($id);
-      return $review;
+      $tvShows = TvShow::all();
+      return view("reviews.show", [
+        "review" => $review,
+        "tvShows" => $tvShows
+      ]);
     }
 
     /**

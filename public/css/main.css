@@ -176,6 +176,21 @@ h2 {
   margin-bottom: 30px;
 }
 
+.oneReview {
+  font-size: 30px;
+  border: 1px solid grey;!important
+  padding: 40px;!important
+}
+
+.reviewUsername {
+  margin-top: 20px;
+}
+
+.viewMore {
+  display: block;
+  margin-top: 5px;
+}
+
 .review-list > li {
   color: white;
   background-color: black;
@@ -189,6 +204,11 @@ h2 {
 .create-button {
   background-color: black;
   color: white;
+}
+
+.back-arrow {
+  display: block;
+  margin-bottom: 40px;
 }
 
 .links > a {
@@ -218,4 +238,8 @@ ul > li {
 
 .reviewFields {
   background-color: lightgrey;
+}
+
+.all-reviews {
+  margin-top: 30px;
 }

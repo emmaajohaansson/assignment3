@@ -20,7 +20,7 @@
         <i class="fa fa-star"></i>
         @endfor
       </span>
-        <p class="reviewComment">{{ $review->comment }}</p>
+        <a class="btn btn-primary viewMore col-md-2" href="{{ route('reviews.show', ['id' => $review->id]) }}">View More</a>
     </li>
     @endforeach
     </ul>
