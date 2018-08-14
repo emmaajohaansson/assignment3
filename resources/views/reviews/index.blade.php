@@ -11,10 +11,9 @@
       <li class="list-group-item">
         <h4 class="revUsername">{{ $review->name }}</h4>
         @foreach ($tvShows as $tvShow)
-        <p>{{ $tvShow->name }}</p>
-        <!--@if ($review->tv_show_id == $tvShow->id)
-        <p>Review of {{ $tvShow->name }}</p>
-        @endif-->
+        @if ($review->tv_show_id == $tvShow->id)
+        <p>Review of {{ $tvShow->title }}</p>
+        @endif
         @endforeach
         <span class="fa-layers fa-fw">
         @for ($x = 1; $x <= $review->grade; $x++)
@@ -23,7 +22,7 @@
       </span>
         <p class="reviewComment">{{ $review->comment }}</p>
     </li>
-      @endforeach
+    @endforeach
     </ul>
   </div>
   </div>
