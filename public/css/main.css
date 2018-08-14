@@ -71,8 +71,9 @@ label {
   display: none;
 }
 
-#login-for-review {
+.review-texts {
   margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 .review-guest {
@@ -217,8 +218,4 @@ ul > li {
 
 .reviewFields {
   background-color: lightgrey;
-}
-
-.review-list {
-  margin-top: 40px;
 }
