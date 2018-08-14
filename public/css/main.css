@@ -67,6 +67,18 @@ label {
   display: none;
 }
 
+#review-user {
+  display: none;
+}
+
+#login-for-review {
+  margin-top: 200px;
+}
+
+.review-guest {
+  float:left;
+}
+
 .frontTitle {
     font-size: 84px;
     color: white;

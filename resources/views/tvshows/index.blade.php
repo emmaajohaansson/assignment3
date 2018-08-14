@@ -3,10 +3,10 @@
 @section('content')
 
       <div class="full-height">
-
+      @auth
         @component('tvshows.components.create')
         @endcomponent
-
+      @endauth
         <div class="row justify-content-center">
         @foreach ($tvShows as $tvShow)
         <div class="card col-md-3" style="width: 18rem";>
