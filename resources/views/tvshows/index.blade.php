@@ -4,8 +4,7 @@
 
       <div class="full-height">
       @auth
-        @component('tvshows.components.create')
-        @endcomponent
+        <a href="{{ route('tvshows.create') }}" class="btn btn-lg create-button"><i class="fa fa-plus"></i> Add new show</button>
       @endauth
         <div class="row justify-content-center">
         @foreach ($tvShows as $tvShow)

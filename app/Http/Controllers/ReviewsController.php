@@ -8,6 +8,11 @@ use App\TvShow;
 
 class ReviewsController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'delete']]);
+  }
+  
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +37,11 @@ class ReviewsController extends Controller
     public function show($id)
     {
       $review = Review::find($id);
-      return $review;
+      $tvShows = TvShow::all();
+      return view("reviews.show", [
+        "review" => $review,
+        "tvShows" => $tvShows
+      ]);
     }
 
     /**
@@ -40,9 +49,12 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+      $tvShow = TvShow::find($id);
+      return view("reviews.create", [
+        "tvShow" => $tvShow
+      ]);
     }
 
     /**

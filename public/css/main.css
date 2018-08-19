@@ -71,8 +71,9 @@ label {
   display: none;
 }
 
-#login-for-review {
+.review-texts {
   margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 .review-guest {
@@ -175,6 +176,29 @@ h2 {
   margin-bottom: 30px;
 }
 
+.oneReview {
+  font-size: 30px;
+}
+
+.oneStreamer {
+  font-size: 30px;
+  padding: 40px;!important
+}
+
+.reviewUsername {
+  margin-top: 20px;
+}
+
+.showButtons {
+  display: block;
+  float: right;!important
+}
+
+.viewMore {
+  display: block;
+  margin-top: 5px;
+}
+
 .review-list > li {
   color: white;
   background-color: black;
@@ -188,6 +212,11 @@ h2 {
 .create-button {
   background-color: black;
   color: white;
+}
+
+.back-arrow {
+  display: block;
+  margin-bottom: 40px;
 }
 
 .links > a {
@@ -219,6 +248,6 @@ ul > li {
   background-color: lightgrey;
 }
 
-.review-list {
-  margin-top: 40px;
+.all-reviews {
+  margin-top: 30px;
 }
