@@ -194,6 +194,10 @@ h2 {
   float: right;!important
 }
 
+.deleteButton {
+  display: inline;
+}
+
 .viewMore {
   display: block;
   margin-top: 5px;

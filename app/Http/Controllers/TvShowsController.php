@@ -11,7 +11,7 @@ class TvShowsController extends Controller
 {
   public function __construct()
   {
-    $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'delete']]);
+    $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'destroy']]);
   }
 
     /**
@@ -93,7 +93,7 @@ class TvShowsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view("tvshows.edit");
     }
 
     /**
@@ -116,6 +116,9 @@ class TvShowsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        TvShow::destroy($id);
+
+        return redirect()->route('tvshows.index');
+
     }
 }

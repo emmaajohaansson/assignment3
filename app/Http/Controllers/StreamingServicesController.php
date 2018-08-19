@@ -9,9 +9,9 @@ class StreamingServicesController extends Controller
 {
   public function __construct()
   {
-    $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'delete']]);
+    $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'destroy']]);
   }
-  
+
     /**
      * Display a listing of the resource.
      *
@@ -98,6 +98,8 @@ class StreamingServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        StreamingService::destroy($id);
+
+        return redirect()->route('streamingservices.index');
     }
 }

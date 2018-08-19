@@ -10,8 +10,14 @@
               {{ $tvShow->title }}
             </h1>
             <div class="col-md-12 showButtons">
-            <a class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
-            <a class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</a>
+              @auth
+            <a href="{{ route('tvshows.edit', $tvShow->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+            <form action="{{ route('tvshows.destroy', $tvShow->id) }}" method="post" class="deleteButton">
+              @csrf
+            {{ method_field('DELETE') }}
+            <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
+          </form>
+          @endauth
           </div>
             <div class="detail-info col-md-6 col-md-offset-3">
             <p class="detailParagraphs">{{ $tvShow->description }}</p>
@@ -69,6 +75,7 @@
             @endfor
           </span>
             <p class="reviewComment">{{ $review->comment }}</p>
+            <a class="btn btn-primary viewMore col-md-2" href="{{ route('reviews.show', ['id' => $review->id]) }}">View More</a>
         </li>
         @empty
           <p class="review-texts">There are no reviews for this show yet. Be the first to write one!</p>

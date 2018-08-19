@@ -20,8 +20,14 @@
       @endfor
     </span>
       <p class="reviewComment">{{ $review->comment }}</p>
+      @auth
       <a class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
-      <a class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</a>
+      <form action="{{ route('reviews.destroy', $review->id) }}" method="post" class="deleteButton">
+        @csrf
+      {{ method_field('DELETE') }}
+      <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
+    </form>
+    @endauth
     </div>
   </div>
 @endif
