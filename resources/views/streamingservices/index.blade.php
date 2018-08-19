@@ -6,9 +6,9 @@
     <h1 class="title">Streaming Services</h1>
     <p class="no-margin-bottom">Check out the different streaming services you can use to watch the shows displayed on Tv Community!</p>
     @auth
-      @component('streamingservices.components.create')
-      @endcomponent
+      <a href="{{ route('streamingservices.create') }}" class="btn btn-lg create-button"><i class="fa fa-plus"></i> Add new streaming service</a>
     @endauth
+    <a href="{{ route('streamingservices.create') }}">hej</a>
     <div class="row justify-content-center">
     <ul class="review-list all-reviews list-group col-md-5">
       @foreach ($streamingServices as $service)

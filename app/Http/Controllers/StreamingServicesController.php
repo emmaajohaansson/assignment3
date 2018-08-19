@@ -7,6 +7,11 @@ use App\StreamingService;
 
 class StreamingServicesController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'delete']]);
+  }
+  
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +46,7 @@ class StreamingServicesController extends Controller
      */
     public function create()
     {
-        //
+        return view("streamingservices.create");
     }
 
     /**
@@ -70,7 +75,7 @@ class StreamingServicesController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view("streamingservices.edit");
     }
 
     /**

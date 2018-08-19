@@ -15,17 +15,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::resource('tvshows', 'TvShowsController', ['only' => ['index', 'show']]);
+Route::resource('tvshows', 'TvShowsController');
 
-Route::resource('streamingservices', 'StreamingServicesController', ['only' => ['index', 'show']]);
+Route::resource('streamingservices', 'StreamingServicesController');
 
-Route::resource('reviews', 'ReviewsController', ['only' => ['index', 'show']]);
-
-Route::middleware(['auth'])->group(function () {
-    Route::resource('tvshows', 'TvShowsController', ['only' => ['store', 'update', 'destroy']]);
-    Route::resource('streamingservices', 'StreamingServicesController', ['only' => ['store', 'update', 'destroy']]);
-    Route::resource('reviews', 'ReviewsController', ['only' => ['store', 'update', 'destroy']]);
-  });
+Route::resource('reviews', 'ReviewsController');
 
 
 Auth::routes();

@@ -1,6 +1,10 @@
 @extends('layouts.layout')
 
+<?php echo 1; ?>
+
 @section('content')
+
+<?php echo 2; ?>
 
 <form action="{{ route('tvshows.store') }}" method="post">
     @csrf
