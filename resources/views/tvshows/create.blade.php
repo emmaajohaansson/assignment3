@@ -15,6 +15,11 @@
       <textarea rows="6" name="description" class="col-md-8" type="text" name="comment" required></textarea>
       <label for="title">Premiere Year</label>
       <input type="number" name="premiere_year" class="col-md-8" required />
+      <h4 class="form-heading">Available on the following streaming services:</h4>
+      @foreach ($streamingServices as $service)
+        <input type="checkbox" class="checkboxes" id="{{ $service->id }}" name="streamingServices[]" value="{{ $service->id }}">
+        <label for="{{ $service->id }}" class="streamingOptions">{{ $service->name }}</label>
+      @endforeach
     </div>
     <div class="modal-footer">
       <input type="submit" value="Submit" class="btn btn-primary btn-sm mb-2">
