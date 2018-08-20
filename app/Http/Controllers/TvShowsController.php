@@ -38,7 +38,7 @@ class TvShowsController extends Controller
       $tvShow = TvShow::find($id);
       $tvShow->streamingServices = $tvShow->streamingServices;
       $tvShow->reviews = $tvShow->reviews;
-      return view("tvshows.show", [
+      return view("reviews.create", [
         "tvShow" => $tvShow
     ]);
     }
@@ -93,7 +93,12 @@ class TvShowsController extends Controller
      */
     public function edit($id)
     {
-        return view("tvshows.edit");
+      $tvShow = TvShow::find($id);
+      $streamingServices = StreamingService::all();
+      return view("tvshows.edit", [
+        "tvShow" => $tvShow,
+        "streamingServices" => $streamingServices
+    ]);
     }
 
     /**

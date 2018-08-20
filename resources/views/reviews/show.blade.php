@@ -21,7 +21,7 @@
     </span>
       <p class="reviewComment">{{ $review->comment }}</p>
       @auth
-      <a class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+      <a href="{{ route('reviews.edit', $review->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
       <form action="{{ route('reviews.destroy', $review->id) }}" method="post" class="deleteButton">
         @csrf
       {{ method_field('DELETE') }}

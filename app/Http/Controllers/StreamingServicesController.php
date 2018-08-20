@@ -75,7 +75,10 @@ class StreamingServicesController extends Controller
      */
     public function edit($id)
     {
-        return view("streamingservices.edit");
+      $streamingService = StreamingService::find($id);
+      return view("streamingservices.edit", [
+        "streamingService" => $streamingService
+    ]);
     }
 
     /**

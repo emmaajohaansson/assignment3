@@ -85,7 +85,12 @@ class ReviewsController extends Controller
      */
     public function edit($id)
     {
-        //
+      $review = Review::find($id);
+      $tvShows = TvShow::all();
+      return view("reviews.edit", [
+        "review" => $review,
+        "tvShows" => $tvShows
+      ]);
     }
 
     /**
@@ -97,7 +102,7 @@ class ReviewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
