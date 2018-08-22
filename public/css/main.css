@@ -1,0 +1,275 @@
+html, body {
+    background-color: black;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+}
+
+.container-fluid {
+    padding: 0;
+    text-align: center;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.subtract-header {
+    margin-top: -55px; !important
+}
+
+.img-background {
+    background-image: url("../img/TV-Streaming.png");
+    background-size: cover;
+    background-color: black;
+}
+
+.navbar, .navbar-expand-md, .navbar-dark, .bg-dark, .navbar-laravel {
+    background-color: black; !important
+}
+
+.nav-item {
+    color: white;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.modal {
+    color: black;
+    text-align: left;
+}
+
+label {
+    display: block;!important
+}
+
+#reviewConnect {
+    display: none;
+}
+
+#review-user {
+    display: none;
+}
+
+.review-texts {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.review-guest {
+    float:left;
+}
+
+.frontTitle {
+    font-size: 84px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    padding-top: 70px;
+}
+
+#startList {
+    padding-top: 300px;
+}
+
+.startPage {
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+}
+
+.title {
+    margin-top: 30px;
+    font-size: 50px;
+}
+
+.show-title {
+    font-size: 75px;
+    margin-top: 40px;
+}
+
+h2 {
+    display: block;
+}
+
+.card {
+    margin: 20px;
+    background-color: inherit;
+}
+
+.card-img-top {
+    height: 300px;
+}
+
+.card-title {
+    color: white;
+}
+
+.detail-cards {
+    padding: 0;
+}
+
+.details-img {
+    width: 100%;
+    height: 500px;
+}
+
+.detail-info {
+    text-align: left;
+}
+
+.show-details {
+    font-size: 20px;
+}
+
+.detailParagraphs {
+    margin: 20px;
+}
+
+.reviews {
+    margin-top: 70px;
+}
+
+.glyphicon-star {
+    color: yellow;
+}
+
+.glyphicon-asterisk {
+    color: red;
+}
+
+.fa-star {
+    color: yellow;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.streaming-img {
+    height: 150px;
+    width: 300px;
+}
+
+.streaming-info {
+    float: right;
+}
+
+.review-form {
+    margin-right: 20px;
+}
+
+.review-list {
+   margin-left: 20px;
+}
+
+.all-reviews {
+    margin-bottom: 30px;
+}
+
+.oneReview {
+    font-size: 30px;
+}
+
+.oneStreamer {
+    font-size: 30px;
+    padding: 40px;!important
+}
+
+.reviewUsername {
+    margin-top: 20px;
+}
+
+.showButtons {
+    display: block;
+    float: right;!important
+}
+
+.deleteButton {
+    display: inline;
+}
+
+.input {
+    margin-bottom: 15px;
+}
+
+.viewMore {
+    display: block;
+    margin-top: 5px;
+}
+
+.review-list > li {
+    color: white;
+    background-color: black;
+    text-align: left;
+}
+
+.list-group-item {
+    border: 1px solid grey;!important
+}
+
+.form-heading {
+    margin-top: 15px;
+}
+
+.streamingOptions  {
+    display: inline;
+    margin-right: 15px;
+}
+
+.create-button {
+    background-color: black;
+    color: white;
+}
+
+.back-arrow {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.links > a {
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a {
+    color: white; !important
+}
+
+a:hover {
+    color: white;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.reviewFields {
+    background-color: lightgrey;
+}
+
+.all-reviews {
+    margin-top: 30px;
+}

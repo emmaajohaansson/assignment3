@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::resource('tvshows', 'TvShowsController');
+
+Route::resource('streamingservices', 'StreamingServicesController');
+
+Route::resource('reviews', 'ReviewsController');
+
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
