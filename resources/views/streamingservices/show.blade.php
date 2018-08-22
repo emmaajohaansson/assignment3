@@ -13,7 +13,7 @@
       <h4 class="revUsername">{{ $streamingService->name }}</h4>
       <p>Price: {{ $streamingService->price }} SEK</p>
       @auth
-      <a class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+      <a href="{{ route('streamingservices.edit', $streamingService->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
       <form action="{{ route('streamingservices.destroy', $streamingService->id) }}" method="post" class="deleteButton">
         @csrf
       {{ method_field('DELETE') }}

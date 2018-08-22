@@ -75,7 +75,10 @@ class StreamingServicesController extends Controller
      */
     public function edit($id)
     {
-        return view("streamingservices.edit");
+      $streamingService = StreamingService::find($id);
+      return view("streamingservices.edit", [
+        "streamingService" => $streamingService
+    ]);
     }
 
     /**
@@ -87,7 +90,14 @@ class StreamingServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $streamingService = StreamingService::find($id);
+      $streamingService->name = $request->name;
+      $streamingService->price = $request->price;
+      $streamingService->image = $request->image;
+      //Save the new streaming service
+      $streamingService->save();
+
+      return redirect()->route('streamingservices.show', ['id' => $streamingService->id]); 
     }
 
     /**

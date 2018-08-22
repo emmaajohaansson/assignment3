@@ -38,7 +38,7 @@ class TvShowsController extends Controller
       $tvShow = TvShow::find($id);
       $tvShow->streamingServices = $tvShow->streamingServices;
       $tvShow->reviews = $tvShow->reviews;
-      return view("tvshows.show", [
+      return view("reviews.create", [
         "tvShow" => $tvShow
     ]);
     }
@@ -93,7 +93,12 @@ class TvShowsController extends Controller
      */
     public function edit($id)
     {
-        return view("tvshows.edit");
+      $tvShow = TvShow::find($id);
+      $streamingServices = StreamingService::all();
+      return view("tvshows.edit", [
+        "tvShow" => $tvShow,
+        "streamingServices" => $streamingServices
+    ]);
     }
 
     /**
@@ -105,7 +110,30 @@ class TvShowsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $tvShow = TvShow::find($id);
+      $tvShow->title = $request->title;
+      $tvShow->image = $request->image;
+      $tvShow->description = $request->description;
+      $tvShow->premiere_year = $request->premiere_year;
+      //Save the new tv-show
+      $tvShow->save();
+
+      $showStreamers = StreamingServiceTvShow::all();
+      foreach ($showStreamers as $showStreamer) {
+        if ($id == $showStreamer->tv_show_id) {
+          $streamerId = $showStreamer->id;
+          StreamingServiceTvShow::destroy($streamerId);
+      }
+    }
+
+      foreach ($request->get("streamingServices") as $service) {
+        $showStreamer = new StreamingServiceTvShow;
+        $showStreamer->tv_show_id = $tvShow->id;
+        $showStreamer->streaming_service_id = $service;
+        $showStreamer->save();
+      }
+
+      return redirect()->route('tvshows.show', ['id' => $tvShow->id]);
     }
 
     /**

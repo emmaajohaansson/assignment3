@@ -198,6 +198,10 @@ h2 {
   display: inline;
 }
 
+.input {
+  margin-bottom: 15px;
+}
+
 .viewMore {
   display: block;
   margin-top: 5px;
