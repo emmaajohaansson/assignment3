@@ -5,7 +5,7 @@
 @if($tvShow)
 <h1>Edit {{ $tvShow->title }}</h1>
 <div class="row justify-content-center">
-  <form action="{{ route('tvshows.update') }}" method="post" class="col-md-6">
+  <form action="{{ route('tvshows.update', $tvShow->id) }}" method="post" class="col-md-6">
     @csrf
     {{ method_field('PUT') }}
     <div class="form-group">

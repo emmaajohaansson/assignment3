@@ -5,7 +5,7 @@
 @if($streamingService)
 <h1>Edit {{ $streamingService->name }}</h1>
 <div class="row justify-content-center">
-  <form action="{{ route('streamingservices.index') }}" method="post" class="col-md-6">
+  <form action="{{ route('streamingservices.update', $streamingService->id) }}" method="post" class="col-md-6">
     @csrf
     {{ method_field('PUT') }}
     <div class="form-group">

@@ -102,7 +102,15 @@ class ReviewsController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $review = Review::find($id);
+      $review->name = $request->name;
+      $review->comment = $request->comment;
+      $review->grade = $request->grade;
+      $review->tv_show_id = $request->tv_show_id;
+      //Save the new tv-show
+      $review->save();
 
+      return redirect()->route('reviews.show', ['id' => $review->id]);
     }
 
     /**
