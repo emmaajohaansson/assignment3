@@ -8,10 +8,10 @@ use App\TvShow;
 
 class ReviewsController extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'destroy']]);
-  }
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'destroy']]);
+    }
 
     /**
      * Display a listing of the resource.
@@ -36,12 +36,12 @@ class ReviewsController extends Controller
      */
     public function show($id)
     {
-      $review = Review::find($id);
-      $tvShows = TvShow::all();
-      return view("reviews.show", [
-        "review" => $review,
-        "tvShows" => $tvShows
-      ]);
+        $review = Review::find($id);
+        $tvShows = TvShow::all();
+        return view("reviews.show", [
+            "review" => $review,
+            "tvShows" => $tvShows
+        ]);
     }
 
     /**
@@ -51,74 +51,71 @@ class ReviewsController extends Controller
      */
     public function create($id)
     {
-      $tvShow = TvShow::find($id);
-      return view("reviews.create", [
-        "tvShow" => $tvShow
-      ]);
+        $tvShow = TvShow::find($id);
+        return view("reviews.create", [
+          "tvShow" => $tvShow
+        ]);
     }
 
     /**
-    * Store a newly created resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function store(Request $request)
-    {
-      $review = new Review;
-      $review->name = $request->name;
-      $review->comment = $request->comment;
-      $review->grade = $request->grade;
-      $review->tv_show_id = $request->tv_show_id;
-      //Save the new tv-show
-      $review->save();
-
-
-       return redirect()->route('tvshows.show', ['id' => $review->tv_show_id]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-      $review = Review::find($id);
-      $tvShows = TvShow::all();
-      return view("reviews.edit", [
-        "review" => $review,
-        "tvShows" => $tvShows
-      ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function store(Request $request)
     {
-      $review = Review::find($id);
-      $review->name = $request->name;
-      $review->comment = $request->comment;
-      $review->grade = $request->grade;
-      $review->tv_show_id = $request->tv_show_id;
-      //Save the new tv-show
-      $review->save();
+        $review = new Review;
+        $review->name = $request->name;
+        $review->comment = $request->comment;
+        $review->grade = $request->grade;
+        $review->tv_show_id = $request->tv_show_id;
+        $review->save();
 
-      return redirect()->route('reviews.show', ['id' => $review->id]);
+        return redirect()->route('tvshows.show', ['id' => $review->tv_show_id]);
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Show the form for editing the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function edit($id)
+    {
+        $review = Review::find($id);
+        $tvShows = TvShow::all();
+        return view("reviews.edit", [
+          "review" => $review,
+          "tvShows" => $tvShows
+        ]);
+    }
+
+    /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function update(Request $request, $id)
+    {
+        $review = Review::find($id);
+        $review->name = $request->name;
+        $review->comment = $request->comment;
+        $review->grade = $request->grade;
+        $review->tv_show_id = $request->tv_show_id;
+        $review->save();
+
+        return redirect()->route('reviews.show', ['id' => $review->id]);
+    }
+
+    /**
+    * Remove the specified resource from storage.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function destroy($id)
     {
         Review::destroy($id);

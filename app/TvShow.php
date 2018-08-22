@@ -10,11 +10,11 @@ class TvShow extends Model
 
     //Defining a tv-shows relationship with a review
     public function reviews(){
-      return $this->hasMany('App\Review');
+        return $this->hasMany('App\Review');
     }
 
     //Defining a tv-shows relationship with a streaming service
     public function streamingServices(){
-      return $this->belongsToMany('App\StreamingService');
+        return $this->belongsToMany('App\StreamingService');
     }
 }

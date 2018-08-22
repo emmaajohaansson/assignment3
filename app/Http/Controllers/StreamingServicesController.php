@@ -7,43 +7,43 @@ use App\StreamingService;
 
 class StreamingServicesController extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'destroy']]);
-  }
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'destroy']]);
+    }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function index()
     {
-      $streamingServices = StreamingService::all();
-      return view("streamingservices.index", [
-        "streamingServices" => $streamingServices
-    ]);
+        $streamingServices = StreamingService::all();
+        return view("streamingservices.index", [
+            "streamingServices" => $streamingServices
+        ]);
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Display the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function show($id)
     {
-      $streamingService = StreamingService::find($id);
-      return view("streamingservices.show", [
-        "streamingService" => $streamingService
-    ]);
+        $streamingService = StreamingService::find($id);
+        return view("streamingservices.show", [
+            "streamingService" => $streamingService
+        ]);
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    * Show the form for creating a new resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function create()
     {
         return view("streamingservices.create");
@@ -57,55 +57,53 @@ class StreamingServicesController extends Controller
     */
     public function store(Request $request)
     {
-      $streamingService = new StreamingService;
-      $streamingService->name = $request->name;
-      $streamingService->price = $request->price;
-      $streamingService->image = $request->image;
-      //Save the new streaming service
-      $streamingService->save();
+        $streamingService = new StreamingService;
+        $streamingService->name = $request->name;
+        $streamingService->price = $request->price;
+        $streamingService->image = $request->image;
+        $streamingService->save();
 
-       return redirect()->route('streamingservices.index');
+        return redirect()->route('streamingservices.index');
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Show the form for editing the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function edit($id)
     {
-      $streamingService = StreamingService::find($id);
-      return view("streamingservices.edit", [
-        "streamingService" => $streamingService
-    ]);
+        $streamingService = StreamingService::find($id);
+        return view("streamingservices.edit", [
+            "streamingService" => $streamingService
+        ]);
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function update(Request $request, $id)
     {
-      $streamingService = StreamingService::find($id);
-      $streamingService->name = $request->name;
-      $streamingService->price = $request->price;
-      $streamingService->image = $request->image;
-      //Save the new streaming service
-      $streamingService->save();
+        $streamingService = StreamingService::find($id);
+        $streamingService->name = $request->name;
+        $streamingService->price = $request->price;
+        $streamingService->image = $request->image;
+        $streamingService->save();
 
-      return redirect()->route('streamingservices.show', ['id' => $streamingService->id]); 
+        return redirect()->route('streamingservices.show', ['id' => $streamingService->id]);
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Remove the specified resource from storage.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function destroy($id)
     {
         StreamingService::destroy($id);

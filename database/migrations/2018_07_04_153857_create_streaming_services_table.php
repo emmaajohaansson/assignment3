@@ -14,12 +14,12 @@ class CreateStreamingServicesTable extends Migration
     public function up()
     {
         Schema::create('streaming_services', function (Blueprint $table) {
-              $table->increments('id');
-              $table->text('name');
-              $table->integer('price');
-              $table->text('image');
-              $table->timestamp('created_at')->useCurrent();
-              $table->timestamp('updated_at')->useCurrent();
+            $table->increments('id');
+            $table->text('name');
+            $table->integer('price');
+            $table->text('image');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

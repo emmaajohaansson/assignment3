@@ -14,11 +14,11 @@ class CreateStreamingServiceTvShowTable extends Migration
     public function up()
     {
         Schema::create('streaming_service_tv_show', function (Blueprint $table) {
-          $table->increments('id');
-          $table->integer('tv_show_id');
-          $table->integer('streaming_service_id');
-          $table->timestamp('created_at')->useCurrent();
-          $table->timestamp('updated_at')->useCurrent();
+            $table->increments('id');
+            $table->integer('tv_show_id');
+            $table->integer('streaming_service_id');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
